@@ -23,7 +23,7 @@
 
 <script>
 export default {
-	name: "HomeHero",
+	name: "HomeCarousel",
 	components: {},
 	data: () => ({
 		slides: [

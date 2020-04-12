@@ -16,13 +16,14 @@
 		<v-app-bar app dark color="primary">
 			<v-app-bar-nav-icon
 				@click.stop="drawer = !drawer"
-				class="hidden-md-and-up"
+				:class="drawer ? '' : 'hidden-md-and-up'"
 			/>
 			<v-spacer class="hidden-md-and-up"></v-spacer>
 			<v-toolbar-title>Granja de Amor</v-toolbar-title>
 			<v-btn
 				v-for="item in items"
 				:key="item.title"
+				:to="item.link"
 				color="primaryLight"
 				class="hidden-sm-and-down ml-3"
 			>
@@ -42,9 +43,10 @@ export default {
 	data: () => ({
 		drawer: false,
 		items: [
-			{ title: "Home", icon: "mdi-home" },
-			{ title: "Acerca de", icon: "mdi-information" },
-			{ title: "Contacto", icon: "mdi-email" }
+			{ title: "Home", icon: "mdi-home", link: "/home" },
+			{ title: "Compañeros", icon: "mdi-dog", link: "/mates" },
+			{ title: "Acerca de", icon: "mdi-information", link: "/about" },
+			{ title: "Contacto", icon: "mdi-email", link: "/contact" }
 		]
 	})
 };
